@@ -29,7 +29,7 @@ const imagesDesctription = document.querySelectorAll("#description");
 
 
 // inizializza le classi iniziali per i vari elementi
-settaClassi();
+mostraCorrente();
 
 // bottone per andare avanti
 document.getElementById("nextBtn").addEventListener("click", function () {
@@ -56,26 +56,31 @@ document.getElementById("prevBtn").addEventListener("click", function () {
 miniature.forEach((element, index, array) => {
     element.addEventListener("click", function () {
         console.log("ok");
-        images2[currentImg].classList.remove("active");
-        images2[currentImg].classList.add("wait");
-        miniature[currentImg].classList.add("miniWait");
-        miniature[currentImg].classList.remove("miniActive");
-        imagesDesctription[currentImg].classList.add("wait");
-        imagesDesctription[currentImg].classList.remove("active");
+        nascondiCorrente();
         currentImg = index ;
-        images2[currentImg].classList.add("active");
-        images2[currentImg].classList.remove("wait");
-        miniature[currentImg].classList.remove("miniWait");
-        miniature[currentImg].classList.add("miniActive");
-        imagesDesctription[currentImg].classList.remove("wait");
-        imagesDesctription[currentImg].classList.add("active");
+        mostraCorrente();
 
     })
 });
 
+
+
+
+
 // --------------- funzioni
 
-function scorriIndietro() {
+function mostraCorrente() {
+
+    images2[currentImg].classList.add("active");
+    images2[currentImg].classList.remove("wait");
+    miniature[currentImg].classList.remove("miniWait");
+    miniature[currentImg].classList.add("miniActive");
+    imagesDesctription[currentImg].classList.remove("wait");
+    imagesDesctription[currentImg].classList.add("active");
+
+};
+
+function nascondiCorrente() {
 
 
     images2[currentImg].classList.remove("active");
@@ -84,13 +89,16 @@ function scorriIndietro() {
     miniature[currentImg].classList.remove("miniActive");
     imagesDesctription[currentImg].classList.add("wait");
     imagesDesctription[currentImg].classList.remove("active");
+
+
+};
+
+function scorriIndietro() {
+
+
+    nascondiCorrente();
     currentImg--;
-    images2[currentImg].classList.add("active");
-    images2[currentImg].classList.remove("wait");
-    miniature[currentImg].classList.remove("miniWait");
-    miniature[currentImg].classList.add("miniActive");
-    imagesDesctription[currentImg].classList.remove("wait");
-    imagesDesctription[currentImg].classList.add("active");
+    mostraCorrente();
 
 
 };
@@ -98,19 +106,9 @@ function scorriIndietro() {
 function scorriIndietroRewind() {
 
 
-    images2[currentImg].classList.remove("active");
-    images2[currentImg].classList.add("wait");
-    miniature[currentImg].classList.add("miniWait");
-    miniature[currentImg].classList.remove("miniActive");
-    imagesDesctription[currentImg].classList.add("wait");
-    imagesDesctription[currentImg].classList.remove("active");
+    nascondiCorrente();
     currentImg = (images2.length - 1);
-    images2[currentImg].classList.add("active");
-    images2[currentImg].classList.remove("wait");
-    miniature[currentImg].classList.remove("miniWait");
-    miniature[currentImg].classList.add("miniActive");
-    imagesDesctription[currentImg].classList.remove("wait");
-    imagesDesctription[currentImg].classList.add("active");
+    mostraCorrente();
 
 
 };
@@ -118,19 +116,9 @@ function scorriIndietroRewind() {
 function scorriAvanti() {
 
 
-    images2[currentImg].classList.remove("active");
-    images2[currentImg].classList.add("wait");
-    miniature[currentImg].classList.add("miniWait");
-    miniature[currentImg].classList.remove("miniActive");
-    imagesDesctription[currentImg].classList.add("wait");
-    imagesDesctription[currentImg].classList.remove("active");
+    nascondiCorrente();
     currentImg++;
-    images2[currentImg].classList.add("active");
-    images2[currentImg].classList.remove("wait");
-    miniature[currentImg].classList.remove("miniWait");
-    miniature[currentImg].classList.add("miniActive");
-    imagesDesctription[currentImg].classList.remove("wait");
-    imagesDesctription[currentImg].classList.add("active");
+    mostraCorrente();
 
 
 };
@@ -138,32 +126,10 @@ function scorriAvanti() {
 function scorriAvantiRewind() {
 
 
-    images2[currentImg].classList.remove("active");
-    images2[currentImg].classList.add("wait");
-    miniature[currentImg].classList.add("miniWait");
-    miniature[currentImg].classList.remove("miniActive");
-    imagesDesctription[currentImg].classList.add("wait");
-    imagesDesctription[currentImg].classList.remove("active");
+    nascondiCorrente();
     currentImg = (0);
-    images2[currentImg].classList.add("active");
-    images2[currentImg].classList.remove("wait");
-    miniature[currentImg].classList.remove("miniWait");
-    miniature[currentImg].classList.add("miniActive");
-    imagesDesctription[currentImg].classList.remove("wait");
-    imagesDesctription[currentImg].classList.add("active");
+    mostraCorrente();
 
 
 };
 
-function settaClassi() {
-
-
-    images2[currentImg].classList.remove("wait");
-    images2[currentImg].classList.add("active");
-    miniature[currentImg].classList.remove("miniWait");
-    miniature[currentImg].classList.add("miniActive");
-    imagesDesctription[currentImg].classList.remove("wait");
-    imagesDesctription[currentImg].classList.add("active");
-
-
-};
