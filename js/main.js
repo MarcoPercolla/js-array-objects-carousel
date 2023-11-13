@@ -51,9 +51,25 @@ document.getElementById("prevBtn").addEventListener("click", function () {
         scorriIndietroRewind();
     }
 });
+
+// click su ogni miniatura per selezionare immagine
 miniature.forEach((element, index, array) => {
-    element.addEventListener("click", function (){
+    element.addEventListener("click", function () {
         console.log("ok");
+        images2[currentImg].classList.remove("active");
+        images2[currentImg].classList.add("wait");
+        miniature[currentImg].classList.add("miniWait");
+        miniature[currentImg].classList.remove("miniActive");
+        imagesDesctription[currentImg].classList.add("wait");
+        imagesDesctription[currentImg].classList.remove("active");
+        currentImg = index ;
+        images2[currentImg].classList.add("active");
+        images2[currentImg].classList.remove("wait");
+        miniature[currentImg].classList.remove("miniWait");
+        miniature[currentImg].classList.add("miniActive");
+        imagesDesctription[currentImg].classList.remove("wait");
+        imagesDesctription[currentImg].classList.add("active");
+
     })
 });
 
