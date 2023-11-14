@@ -5,10 +5,7 @@ const arrayImmagini = [
     { immagine: "img/04.webp", titolo: "Stray", descrizione: "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city" },
     { immagine: "img/05.webp", titolo: "Avengers Assemble", descrizione: "mangieranno shawarma anche questa volta?" },
 ]
-// variabili utili per i pulsanti gestione setInterval
-let avanti;
-let indietro;
-let counter = 0;
+
 // immagine principale
 let elementImmagini = "";
 // miniatura a destra
@@ -63,6 +60,11 @@ document.getElementById("playBtn").addEventListener("click", function () {
    play();
 
 });
+
+// variabili utili per i pulsanti gestione setInterval
+let avanti;
+let indietro;
+let counter = 0;
 // click per fermare scorrimeto
 document.getElementById("stopBtn").addEventListener("click", function () {
     
