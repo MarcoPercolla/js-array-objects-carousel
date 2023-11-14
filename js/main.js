@@ -57,13 +57,13 @@ miniature.forEach((element, index, array) => {
     element.addEventListener("click", function () {
         console.log("ok");
         nascondiCorrente();
-        currentImg = index ;
+        currentImg = index;
         mostraCorrente();
 
     })
 });
 
-
+setInterval(scorriInfinito , 3000);
 
 
 
@@ -133,3 +133,24 @@ function scorriAvantiRewind() {
 
 };
 
+function scorriInfinito() {
+
+    if (currentImg < images2.length - 1) {
+        scorriAvanti();
+    } else {
+        scorriAvantiRewind();
+    }
+
+};
+
+function scorriInfinitoindietro() {
+
+
+    if (currentImg > 0) {
+        scorriIndietro();
+    } else {
+        scorriIndietroRewind();
+    }
+
+
+};
