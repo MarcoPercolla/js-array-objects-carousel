@@ -5,6 +5,9 @@ const arrayImmagini = [
     { immagine: "img/04.webp", titolo: "immagine n4", descrizione: "blablablablablsbls" },
     { immagine: "img/05.webp", titolo: "immagine n5", descrizione: "blablablablablsbls" },
 ]
+let avanti;
+let indietro;
+let counter = 0;
 // immagine principale
 let elementImmagini = "";
 // miniatura a destra
@@ -34,22 +37,13 @@ mostraCorrente();
 // bottone per andare avanti
 document.getElementById("nextBtn").addEventListener("click", function () {
 
-    if (currentImg < images2.length - 1) {
-        scorriAvanti();
+    scorriInfinito();
 
-    } else {
-        scorriAvantiRewind();
-
-    }
 });
 // bottone per andare indietro
 document.getElementById("prevBtn").addEventListener("click", function () {
 
-    if (currentImg > 0) {
-        scorriIndietro();
-    } else {
-        scorriIndietroRewind();
-    }
+    scorriInfinitoindietro();
 });
 
 // click su ogni miniatura per selezionare immagine
@@ -63,11 +57,51 @@ miniature.forEach((element, index, array) => {
     })
 });
 
-setInterval(scorriInfinito , 3000);
+document.getElementById("playBtn").addEventListener("click", function () {
+    
+   play();
+
+});
+document.getElementById("stopBtn").addEventListener("click", function () {
+    
+    stop();
+
+});
+
+document.getElementById("rewBtn").addEventListener("click", function () {
+    
+    rewind();
+
+});
 
 
 
 // --------------- funzioni
+function play() {
+    if (counter == 0) {
+        counter = 1;
+        avanti = setInterval(scorriInfinito, 1000);
+        avanti;
+    }
+    
+    
+};
+function stop() {
+    
+    counter = 0;
+    clearInterval(avanti);
+    clearInterval(indietro);
+    
+};
+function rewind() {
+    if (counter == 0) {
+        counter=1;
+        indietro = setInterval(scorriInfinitoindietro, 1000);
+    }
+    
+    
+};
+    
 
 function mostraCorrente() {
 
