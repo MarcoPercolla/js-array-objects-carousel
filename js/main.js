@@ -1,9 +1,9 @@
 const arrayImmagini = [
-    { immagine: "img/01.webp", titolo: "SpiderMan", descrizione: "da grandi poteri blablabla" },
-    { immagine: "img/02.webp", titolo: "immagine n2", descrizione: "blablablablablsbls" },
-    { immagine: "img/03.webp", titolo: "immagine n3", descrizione: "blablablablablsbls" },
-    { immagine: "img/04.webp", titolo: "immagine n4", descrizione: "blablablablablsbls" },
-    { immagine: "img/05.webp", titolo: "immagine n5", descrizione: "blablablablablsbls" },
+    { immagine: "img/01.webp", titolo: "SpiderMan", descrizione: "da grandi poteri derivano grandi responsabilità" },
+    { immagine: "img/02.webp", titolo: "Ratchet and Clank", descrizione: "Le dimensioni non contano!!!" },
+    { immagine: "img/03.webp", titolo: "Fortnite", descrizione: "il gioco sparatutto del momento" },
+    { immagine: "img/04.webp", titolo: "Stray", descrizione: "non è una tigre ma è passabile" },
+    { immagine: "img/05.webp", titolo: "Avengers Assemble", descrizione: "mangieranno shawarma anche questa volta?" },
 ]
 // variabili utili per i pulsanti gestione setInterval
 let avanti;
@@ -18,7 +18,7 @@ let elementMiniImmagini = "";
 arrayImmagini.forEach((element, index, array) => {
     console.log(index, element.immagine);
     const linkImmagine = element.immagine;
-    elementImmagini += `<img id="midWidth" class="wait wideMid" src="${linkImmagine}"><div id="description" class="wait"><h2">${element.titolo}</h2><h3>${element.descrizione}</h3></div>`;
+    elementImmagini += `<img id="midWidth" class="wait wideMid" src="${linkImmagine}"><div id="description" class="wait"> <h2>${element.titolo}</h2> <h3>${element.descrizione}</h3> </div>`;
     elementMiniImmagini += `<img id="miniWidth" class="widemini miniWait" src="${linkImmagine}">`;
 });
 document.getElementById("carousel").innerHTML += elementImmagini;
@@ -83,7 +83,7 @@ document.getElementById("rewBtn").addEventListener("click", function () {
 function play() {
     if (counter == 0) {
         counter = 1;
-        avanti = setInterval(scorriInfinito, 1000);
+        avanti = setInterval(scorriInfinito, 3000);
        
     }
     
@@ -99,7 +99,7 @@ function stop() {
 function rewind() {
     if (counter == 0) {
         counter=1;
-        indietro = setInterval(scorriInfinitoindietro, 1000);
+        indietro = setInterval(scorriInfinitoindietro, 3000);
     }
     
     

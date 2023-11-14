@@ -10,6 +10,7 @@ body {
     color: white;
 }
 
+
 #carousel {
     position: relative;
     width: 80%;
@@ -72,6 +73,10 @@ img{
 }
 
 #description{
+    width: fit-content;
+    padding: 0.5rem;
+    background-color: #2222228b;
+    border-radius: 2rem;
     text-align: end;
     position: absolute;
     bottom: 10px;
@@ -97,4 +102,13 @@ img{
     border-radius: 50%;
     width: 3rem;
     aspect-ratio: 1 / 1;
+}
+
+.controllBarr{
+    margin: 0 7.5vw;
+    padding: 0.5rem 5vw;
+    background-color: rgb(150, 0, 0);
+    justify-content: space-around;
+    display: flex;
+    border-radius: 3rem;
 }
