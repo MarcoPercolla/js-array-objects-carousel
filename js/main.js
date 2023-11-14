@@ -5,6 +5,7 @@ const arrayImmagini = [
     { immagine: "img/04.webp", titolo: "immagine n4", descrizione: "blablablablablsbls" },
     { immagine: "img/05.webp", titolo: "immagine n5", descrizione: "blablablablablsbls" },
 ]
+// variabili utili per i pulsanti gestione setInterval
 let avanti;
 let indietro;
 let counter = 0;
@@ -56,18 +57,19 @@ miniature.forEach((element, index, array) => {
 
     })
 });
-
+// click per scorrere all'infinito
 document.getElementById("playBtn").addEventListener("click", function () {
     
    play();
 
 });
+// click per fermare scorrimeto
 document.getElementById("stopBtn").addEventListener("click", function () {
     
     stop();
 
 });
-
+// click per scorrere indietro infinito
 document.getElementById("rewBtn").addEventListener("click", function () {
     
     rewind();
@@ -77,11 +79,12 @@ document.getElementById("rewBtn").addEventListener("click", function () {
 
 
 // --------------- funzioni
+// ---funzioni per i pulsanti di scorrimento automatico
 function play() {
     if (counter == 0) {
         counter = 1;
         avanti = setInterval(scorriInfinito, 1000);
-        avanti;
+       
     }
     
     
@@ -101,8 +104,8 @@ function rewind() {
     
     
 };
-    
-
+//  ---------------   
+// autoesplicative
 function mostraCorrente() {
 
     images2[currentImg].classList.add("active");
