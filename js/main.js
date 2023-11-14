@@ -1,8 +1,8 @@
 const arrayImmagini = [
-    { immagine: "img/01.webp", titolo: "SpiderMan", descrizione: "da grandi poteri derivano grandi responsabilità" },
-    { immagine: "img/02.webp", titolo: "Ratchet and Clank", descrizione: "Le dimensioni non contano!!!" },
-    { immagine: "img/03.webp", titolo: "Fortnite", descrizione: "il gioco sparatutto del momento" },
-    { immagine: "img/04.webp", titolo: "Stray", descrizione: "non è una tigre ma è passabile" },
+    { immagine: "img/01.webp", titolo: "SpiderMan", descrizione: "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man." },
+    { immagine: "img/02.webp", titolo: "Ratchet and Clank", descrizione: "Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality." },
+    { immagine: "img/03.webp", titolo: "Fortnite", descrizione: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos." },
+    { immagine: "img/04.webp", titolo: "Stray", descrizione: "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city" },
     { immagine: "img/05.webp", titolo: "Avengers Assemble", descrizione: "mangieranno shawarma anche questa volta?" },
 ]
 // variabili utili per i pulsanti gestione setInterval
@@ -18,7 +18,7 @@ let elementMiniImmagini = "";
 arrayImmagini.forEach((element, index, array) => {
     console.log(index, element.immagine);
     const linkImmagine = element.immagine;
-    elementImmagini += `<img id="midWidth" class="wait wideMid" src="${linkImmagine}"><div id="description" class="wait"> <h2>${element.titolo}</h2> <h3>${element.descrizione}</h3> </div>`;
+    elementImmagini += `<img id="midWidth" class="wait wideMid" src="${linkImmagine}"><div id="description" class="wait"> <h2>${element.titolo}</h2> <h5>${element.descrizione}</h5> </div>`;
     elementMiniImmagini += `<img id="miniWidth" class="widemini miniWait" src="${linkImmagine}">`;
 });
 document.getElementById("carousel").innerHTML += elementImmagini;

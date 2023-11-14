@@ -74,6 +74,7 @@ img{
 
 #description{
     width: fit-content;
+    max-width: 98%;
     padding: 0.5rem;
     background-color: #2222228b;
     border-radius: 2rem;
